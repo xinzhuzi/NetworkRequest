@@ -145,7 +145,7 @@
     
     UIProgressView *progressView = (UIProgressView *)[cell viewWithTag:677];
     UILabel *downLabel = (UILabel *)[cell viewWithTag:899];
-
+    
     if (task) {
         [progressView setProgressWithDownloadProgressOfTask:(NSURLSessionDownloadTask *)task animated:YES];
         downLabel.text = [NSString stringWithFormat:@"%.2f%%",progressView.progress*100];

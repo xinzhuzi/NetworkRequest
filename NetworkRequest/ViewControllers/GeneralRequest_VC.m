@@ -45,7 +45,6 @@
 }
 
 - (void)getDownloadRequestTest{
-    //如果数据量较小,不能展示更多的下载进度
     NSString *filePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"路径:%@",filePath);
     // http://www.i1766.com/dushu/22757.html /  http://www.cocoachina.com/bbs/job.php?action=download&aid=33531 下载小说看,文档看,Microsoft软件等等,都可以用,下面的方式.注意一定要向服务器询问请求头是什么格式,下面的请求头格式是Content-Type 数据类型是@"application/force-download" 直接在源码里面添加即可 note:如果在下载中取消,则再次下载会重新下载

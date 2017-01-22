@@ -153,7 +153,7 @@
         response:(void (^)(id responesData))responses;
 
 /**
- 断点下载,过程:先进行普通下载,然后不可以调用cancel方法,要用cancelByProducingResumeData方法,接收下载过来的数据保存,不可以直接杀掉进程:http://blog.csdn.net/majiakun1/article/details/38133789
+ 断点下载,过程:先进行普通下载,然后不可以调用cancel方法,要用cancelByProducingResumeData方法,接收下载时的详细数据保存:http://blog.csdn.net/majiakun1/article/details/38133789
 
  @param data        断点下载中需要恢复下载的数据
  @param filePath    下载到沙盒中文件的位置
