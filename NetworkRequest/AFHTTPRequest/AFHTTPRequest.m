@@ -59,6 +59,8 @@ static AFHTTPSessionManager *sessionManager = nil;
     dispatch_once(&onceToken, ^{
         ///第一种单例封装
         sessionManager = [AFHTTPSessionManager manager];
+        //在iOS7中存在一个bug，在创建后台上传任务时，有时候会返回nil，所以为了解决这个问题，AFNetworking遵照了苹果的建议，在创建失败的时候，会重新尝试创建，次数默认为3次，所以你的应用如果有场景会有在后台上传的情况的话，记得将该值设为YES，避免出现上传失败的问题
+        sessionManager.attemptsToRecreateUploadTasksForBackgroundSessions = YES;
         //第二种单例封装
         /*
          baseURL 的目的，就是让后续的网络访问直接使用 相对路径即可，baseURL 的路径一定要有 / 结尾,此时采用的是第二种单例封装,下面的  @"http://c.m.163.com/"  需要替换具体的自己服务器的URL,如果服务器的具体的URL经常变换,最好不要使用第二种单例封装,因为不同服务器不同配置
@@ -79,7 +81,7 @@ static AFHTTPSessionManager *sessionManager = nil;
      使用setAuthorizationHeaderFieldWithUsername:password:方法填服务器特别要求的请求头密码与账户
      */
     sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    //        session.requestSerializer = [AFJSONRequestSerializer serializer];
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     //        session.requestSerializer=[AFPropertyListRequestSerializer serializerWithFormat:NSPropertyListXMLFormat_v1_0 writeOptions:512];
     //            [session.requestSerializer setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
     //                return  @"Yous string body";
@@ -119,13 +121,13 @@ static AFHTTPSessionManager *sessionManager = nil;
      使用validateResponse:data:error:进行检测
      */
     sessionManager.responseSerializer=[AFHTTPResponseSerializer serializer];
-    //        session.responseSerializer=[AFJSONResponseSerializer serializer];
+//    sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
     //        session.responseSerializer=[AFXMLParserResponseSerializer serializer];
     //        session.responseSerializer=[AFPropertyListResponseSerializer serializer];
     //        session.responseSerializer=[AFImageResponseSerializer serializer];
     //        session.responseSerializer=[AFCompoundResponseSerializer serializer];
     ///看你服务器使用那种形式,就设置其中一种形式即可,下面的也可默认就行
-    sessionManager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"application/force-download", @"application/soap+xml; charset=utf-8",@"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/plain",@"text/css",@"application/x-plist",@"image/*", nil];
+    sessionManager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"application/force-download", @"application/soap+xml; charset=utf-8",@"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/html; charset=iso-8859-1",@"text/plain",@"text/css",@"application/x-plist",@"image/*", nil];
     //        [session.responseSerializer validateResponse:<#(nullable NSHTTPURLResponse *)#> data:<#(nullable NSData *)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>];
     /*
      HTTPS的设置
@@ -289,6 +291,7 @@ static AFHTTPSessionManager *sessionManager = nil;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (responses) {
+            NSLog(@"%@",error.userInfo);
             responses(nil);
         }
     }];

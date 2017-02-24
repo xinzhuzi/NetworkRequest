@@ -92,3 +92,27 @@ typedef NS_ENUM(NSUInteger, AFHTTPNetworkUploadDownloadType) {
  505 HTTP版本不支持
  */
 #endif /* AFHTTPHeader_h */
+
+
+
+
+#pragma mark -------------一些不太重要的方法解释----------
+/*
+ -(void)invalidateSessionCancelingTasks:(BOOL)cancelPendingTasks;
+ 如果将cancelPendingTasks设为YES的话，会在主线程直接关闭掉当前会话，NO的话，会等待当前task结束后再关闭
+ 
+ 
+ 在使用数据流上传的时候
+ - (NSURLSessionUploadTask *)uploadTaskWithStreamedRequest:(NSURLRequest *)request
+ progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock
+ completionHandler:(nullable void (^)(NSURLResponse *response, id _Nullable responseObject, NSError * _Nullable error))completionHandler;
+ 一定要设置回调,否则session没办法在重新发送steam的时候找到数据源
+ - (void)setTaskNeedNewBodyStreamBlock:(nullable NSInputStream * (^)(NSURLSession *session, NSURLSessionTask *task))block;
+ 这个方法里面会去判断totalBytesExpectedToSend这个的大小，我们知道上传请求的时候有三种方法，一个是文件，一个是data，另一个是流，前两种方法session会自动计算Content-Length，但是流却不一样，它的大小是未知的，所以在header信息里面一定要提供Content-Length
+- (void)URLSession:(NSURLSession*)session task:(NSURLSessionTask*)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
+ 
+ 将string里面的:#[]@!$&’()*+,;=字符替换成%
+ FOUNDATION_EXPORT NSString * AFPercentEscapedStringFromString(NSString *string);
+ */
+
+

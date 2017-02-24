@@ -56,6 +56,14 @@
  */
 
 
+/*
+ 即时通讯
+ 
+ http://www.jianshu.com/p/0a11b2d0f4ae
+ 
+ http://www.imooc.com/article/8493 webSocket
+ 
+ */
 
 
 
