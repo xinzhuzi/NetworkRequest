@@ -88,7 +88,7 @@ static AFHTTPSessionManager *sessionManager = nil;
     //            }];
     //        [session.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     //        [session.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];  // 此处设置content-Type生效了，然后就是参数要求是json，怎么设。。
-    //            [session.requestSerializer setAuthorizationHeaderFieldWithUsername:<#(nonnull NSString *)#> password:<#(nonnull NSString *)#>];
+//                [session.requestSerializer setAuthorizationHeaderFieldWithUsername:<#(nonnull NSString *)#> password:<#(nonnull NSString *)#>];
     /*配合setAuthorizationHeaderFieldWithUsername:password:使用
      设置需要身份验证回调方法：
      - (void)setSessionDidReceiveAuthenticationChallengeBlock:

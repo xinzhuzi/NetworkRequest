@@ -11,8 +11,8 @@
 		E6175C8C1E2CE307006E1988 /* SpecialRequest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6175C8B1E2CE307006E1988 /* SpecialRequest_VC.m */; };
 		E6175C8F1E2CE340006E1988 /* DownloadRequest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6175C8E1E2CE340006E1988 /* DownloadRequest_VC.m */; };
 		E6175C921E2CE375006E1988 /* UploadRequest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6175C911E2CE375006E1988 /* UploadRequest_VC.m */; };
-		E6175C951E2CE7E2006E1988 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E6175C941E2CE7E2006E1988 /* Tools.m */; };
 		E6203D601E0B5AFB00A07ADC /* GeneralRequest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6203D5F1E0B5AFB00A07ADC /* GeneralRequest_VC.m */; };
+		E651BDDE1E6CE84000E19B8A /* 网络协议基础概念.md in Resources */ = {isa = PBXBuildFile; fileRef = E651BDDD1E6CE84000E19B8A /* 网络协议基础概念.md */; };
 		E6531F981E0680C50079F1C8 /* MainTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E6531F931E0680C50079F1C8 /* MainTabbar.m */; };
 		E6531F991E0680C50079F1C8 /* Nav_Base_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6531F951E0680C50079F1C8 /* Nav_Base_VC.m */; };
 		E6531F9A1E0680C50079F1C8 /* Parent_Class_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E6531F971E0680C50079F1C8 /* Parent_Class_VC.m */; };
@@ -21,6 +21,13 @@
 		E66E22D01DFA406A00D06432 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E66E22CF1DFA406A00D06432 /* main.m */; };
 		E66E22D31DFA406A00D06432 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E66E22D21DFA406A00D06432 /* AppDelegate.m */; };
 		E66E22DB1DFA406A00D06432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66E22DA1DFA406A00D06432 /* Assets.xcassets */; };
+		E6AB40961E80C88600894220 /* TCP.md in Sources */ = {isa = PBXBuildFile; fileRef = E6AB40951E80C88600894220 /* TCP.md */; };
+		E6AB409B1E80C9F200894220 /* TCP4次挥手.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6AB40991E80C9F200894220 /* TCP4次挥手.jpeg */; };
+		E6AB409C1E80C9F200894220 /* TCP三次握手.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6AB409A1E80C9F200894220 /* TCP三次握手.jpeg */; };
+		E6AB409F1E80CBEC00894220 /* TCP设计框架.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6AB409D1E80CBEC00894220 /* TCP设计框架.jpeg */; };
+		E6AB40A01E80CBEC00894220 /* UDP设计框架.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6AB409E1E80CBEC00894220 /* UDP设计框架.jpeg */; };
+		E6AB40A41E80CCA400894220 /* socket.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6AB40A31E80CCA400894220 /* socket.jpeg */; };
+		E6AB40A61E80CCAE00894220 /* HTTP.md in Sources */ = {isa = PBXBuildFile; fileRef = E6AB40A51E80CCAE00894220 /* HTTP.md */; };
 		E6AEA9321E304FB200B5B3DE /* 位数区别.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6AEA9311E304FB200B5B3DE /* 位数区别.jpg */; };
 		E6AEA9341E304FC100B5B3DE /* iOS_IT技能.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AEA9331E304FC100B5B3DE /* iOS_IT技能.png */; };
 		E6AEA9371E30529200B5B3DE /* adn.cer in Resources */ = {isa = PBXBuildFile; fileRef = E6AEA9351E30529200B5B3DE /* adn.cer */; };
@@ -37,10 +44,9 @@
 		E6175C8E1E2CE340006E1988 /* DownloadRequest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadRequest_VC.m; sourceTree = "<group>"; };
 		E6175C901E2CE375006E1988 /* UploadRequest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadRequest_VC.h; sourceTree = "<group>"; };
 		E6175C911E2CE375006E1988 /* UploadRequest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadRequest_VC.m; sourceTree = "<group>"; };
-		E6175C931E2CE7E2006E1988 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
-		E6175C941E2CE7E2006E1988 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E6203D5E1E0B5AFB00A07ADC /* GeneralRequest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralRequest_VC.h; sourceTree = "<group>"; };
 		E6203D5F1E0B5AFB00A07ADC /* GeneralRequest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralRequest_VC.m; sourceTree = "<group>"; };
+		E651BDDD1E6CE84000E19B8A /* 网络协议基础概念.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "网络协议基础概念.md"; sourceTree = "<group>"; };
 		E6531F921E0680C50079F1C8 /* MainTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabbar.h; sourceTree = "<group>"; };
 		E6531F931E0680C50079F1C8 /* MainTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbar.m; sourceTree = "<group>"; };
 		E6531F941E0680C50079F1C8 /* Nav_Base_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nav_Base_VC.h; sourceTree = "<group>"; };
@@ -60,6 +66,13 @@
 		E66E22D21DFA406A00D06432 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E66E22DA1DFA406A00D06432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E66E22DF1DFA406A00D06432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6AB40951E80C88600894220 /* TCP.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TCP.md; sourceTree = "<group>"; };
+		E6AB40991E80C9F200894220 /* TCP4次挥手.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TCP4次挥手.jpeg"; sourceTree = "<group>"; };
+		E6AB409A1E80C9F200894220 /* TCP三次握手.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TCP三次握手.jpeg"; sourceTree = "<group>"; };
+		E6AB409D1E80CBEC00894220 /* TCP设计框架.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TCP设计框架.jpeg"; sourceTree = "<group>"; };
+		E6AB409E1E80CBEC00894220 /* UDP设计框架.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "UDP设计框架.jpeg"; sourceTree = "<group>"; };
+		E6AB40A31E80CCA400894220 /* socket.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = socket.jpeg; sourceTree = "<group>"; };
+		E6AB40A51E80CCAE00894220 /* HTTP.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = HTTP.md; sourceTree = "<group>"; };
 		E6AEA9311E304FB200B5B3DE /* 位数区别.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "位数区别.jpg"; sourceTree = "<group>"; };
 		E6AEA9331E304FC100B5B3DE /* iOS_IT技能.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS_IT技能.png"; sourceTree = "<group>"; };
 		E6AEA9351E30529200B5B3DE /* adn.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = adn.cer; sourceTree = "<group>"; };
@@ -112,6 +125,21 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E651BDDC1E6CE81300E19B8A /* NetworkingProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E6AB40991E80C9F200894220 /* TCP4次挥手.jpeg */,
+				E6AB409A1E80C9F200894220 /* TCP三次握手.jpeg */,
+				E6AB409D1E80CBEC00894220 /* TCP设计框架.jpeg */,
+				E6AB409E1E80CBEC00894220 /* UDP设计框架.jpeg */,
+				E6AB40A31E80CCA400894220 /* socket.jpeg */,
+				E6AB40951E80C88600894220 /* TCP.md */,
+				E6AB40A51E80CCAE00894220 /* HTTP.md */,
+				E651BDDD1E6CE84000E19B8A /* 网络协议基础概念.md */,
+			);
+			path = NetworkingProtocol;
+			sourceTree = "<group>";
+		};
 		E6531F911E0680C50079F1C8 /* MainBaseVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +188,7 @@
 			children = (
 				E66E22D11DFA406A00D06432 /* AppDelegate.h */,
 				E66E22D21DFA406A00D06432 /* AppDelegate.m */,
+				E651BDDC1E6CE81300E19B8A /* NetworkingProtocol */,
 				E6203D5D1E0B5ADA00A07ADC /* ViewControllers */,
 				E6531F9D1E0683320079F1C8 /* AFHTTPRequest */,
 				E6531F911E0680C50079F1C8 /* MainBaseVC */,
@@ -175,8 +204,6 @@
 				E6AEA9311E304FB200B5B3DE /* 位数区别.jpg */,
 				E6531F9C1E0681130079F1C8 /* Singleton.h */,
 				E6531F9B1E0680F90079F1C8 /* MyToolsHeader.h */,
-				E6175C931E2CE7E2006E1988 /* Tools.h */,
-				E6175C941E2CE7E2006E1988 /* Tools.m */,
 				E66E22DF1DFA406A00D06432 /* Info.plist */,
 				E66E22CF1DFA406A00D06432 /* main.m */,
 				E66E22DA1DFA406A00D06432 /* Assets.xcassets */,
@@ -246,9 +273,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AB40A01E80CBEC00894220 /* UDP设计框架.jpeg in Resources */,
+				E6AB40A41E80CCA400894220 /* socket.jpeg in Resources */,
 				E6AEA9381E30529200B5B3DE /* li.cer in Resources */,
 				E6AEA9341E304FC100B5B3DE /* iOS_IT技能.png in Resources */,
+				E6AB409F1E80CBEC00894220 /* TCP设计框架.jpeg in Resources */,
 				E66E22DB1DFA406A00D06432 /* Assets.xcassets in Resources */,
+				E6AB409B1E80C9F200894220 /* TCP4次挥手.jpeg in Resources */,
+				E651BDDE1E6CE84000E19B8A /* 网络协议基础概念.md in Resources */,
+				E6AB409C1E80C9F200894220 /* TCP三次握手.jpeg in Resources */,
 				E6AEA9371E30529200B5B3DE /* adn.cer in Resources */,
 				E6AEA9321E304FB200B5B3DE /* 位数区别.jpg in Resources */,
 			);
@@ -309,14 +342,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AB40961E80C88600894220 /* TCP.md in Sources */,
 				E6175C8F1E2CE340006E1988 /* DownloadRequest_VC.m in Sources */,
+				E6AB40A61E80CCAE00894220 /* HTTP.md in Sources */,
 				E6175C921E2CE375006E1988 /* UploadRequest_VC.m in Sources */,
 				E6175C8C1E2CE307006E1988 /* SpecialRequest_VC.m in Sources */,
 				E66E22D31DFA406A00D06432 /* AppDelegate.m in Sources */,
 				E66E22D01DFA406A00D06432 /* main.m in Sources */,
 				E6531F981E0680C50079F1C8 /* MainTabbar.m in Sources */,
 				E6531F9A1E0680C50079F1C8 /* Parent_Class_VC.m in Sources */,
-				E6175C951E2CE7E2006E1988 /* Tools.m in Sources */,
 				E6203D601E0B5AFB00A07ADC /* GeneralRequest_VC.m in Sources */,
 				E669DDD31E30E8DF0097C731 /* BreakpointDownload_VC.m in Sources */,
 				E6531FA01E0683420079F1C8 /* AFHTTPRequest.m in Sources */,

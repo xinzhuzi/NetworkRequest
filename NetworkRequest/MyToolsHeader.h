@@ -9,8 +9,7 @@
 #pragma mark ---------------第三方库--------------
 
 
-#pragma mark ---------------小工具--------------
-#import "Tools.h"
+#pragma mark ---------------自定义工具--------------
 #import "Singleton.h"
 #import "AFHTTPHeader.h"
 
@@ -46,6 +45,132 @@
 #endif
 
 
+#pragma mark ------------------------Unicode反编码------------------
+@interface NSArray (HYBUnicodeReadable)
+
+@end
+
+@interface NSDictionary (HYBUnicodeReadable)
+
+@end
+
+@interface NSSet (HYBUnicodeReadable)
+
+@end
 
 
 
+#pragma mark ------------------------Unicode反编码------------------
+@implementation NSArray (HYBUnicodeReadable)
+
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSMutableString *desc = [NSMutableString string];
+    
+    NSMutableString *tabString = [[NSMutableString alloc] initWithCapacity:level];
+    for (NSUInteger i = 0; i < level; ++i) {
+        [tabString appendString:@"\t"];
+    }
+    
+    NSString *tab = @"";
+    if (level > 0) {
+        tab = tabString;
+    }
+    [desc appendString:@"\t(\n"];
+    
+    for (id obj in self) {
+        if ([obj isKindOfClass:[NSDictionary class]]
+            || [obj isKindOfClass:[NSArray class]]
+            || [obj isKindOfClass:[NSSet class]]) {
+            NSString *str = [((NSDictionary *)obj) descriptionWithLocale:locale indent:level + 1];
+            [desc appendFormat:@"%@\t%@,\n", tab, str];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            [desc appendFormat:@"%@\t\"%@\",\n", tab, obj];
+        } else {
+            [desc appendFormat:@"%@\t%@,\n", tab, obj];
+        }
+    }
+    
+    [desc appendFormat:@"%@)", tab];
+    
+    return desc;
+}
+
+
+
+
+@end
+
+@implementation NSDictionary (HYBUnicodeReadable)
+
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSMutableString *desc = [NSMutableString string];
+    
+    NSMutableString *tabString = [[NSMutableString alloc] initWithCapacity:level];
+    for (NSUInteger i = 0; i < level; ++i) {
+        [tabString appendString:@"\t"];
+    }
+    
+    NSString *tab = @"";
+    if (level > 0) {
+        tab = tabString;
+    }
+    
+    [desc appendString:@"\t{\n"];
+    
+    // 遍历数组,self就是当前的数组
+    for (id key in self.allKeys) {
+        id obj = [self objectForKey:key];
+        
+        if ([obj isKindOfClass:[NSString class]]) {
+            [desc appendFormat:@"%@\t%@ = \"%@\",\n", tab, key, obj];
+        } else if ([obj isKindOfClass:[NSArray class]]
+                   || [obj isKindOfClass:[NSDictionary class]]
+                   || [obj isKindOfClass:[NSSet class]]) {
+            [desc appendFormat:@"%@\t%@ = %@,\n", tab, key, [obj descriptionWithLocale:locale indent:level + 1]];
+        } else {
+            [desc appendFormat:@"%@\t%@ = %@,\n", tab, key, obj];
+        }
+    }
+    
+    [desc appendFormat:@"%@}", tab];
+    
+    return desc;
+}
+
+@end
+
+@implementation NSSet (HYBUnicodeReadable)
+
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+    NSMutableString *desc = [NSMutableString string];
+    
+    NSMutableString *tabString = [[NSMutableString alloc] initWithCapacity:level];
+    for (NSUInteger i = 0; i < level; ++i) {
+        [tabString appendString:@"\t"];
+    }
+    
+    NSString *tab = @"\t";
+    if (level > 0) {
+        tab = tabString;
+    }
+    [desc appendString:@"\t{(\n"];
+    
+    for (id obj in self) {
+        if ([obj isKindOfClass:[NSDictionary class]]
+            || [obj isKindOfClass:[NSArray class]]
+            || [obj isKindOfClass:[NSSet class]]) {
+            NSString *str = [((NSDictionary *)obj) descriptionWithLocale:locale indent:level + 1];
+            [desc appendFormat:@"%@\t%@,\n", tab, str];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            [desc appendFormat:@"%@\t\"%@\",\n", tab, obj];
+        } else {
+            [desc appendFormat:@"%@\t%@,\n", tab, obj];
+        }
+    }
+    
+    [desc appendFormat:@"%@)}", tab];
+    
+    return desc;
+}
+
+@end
