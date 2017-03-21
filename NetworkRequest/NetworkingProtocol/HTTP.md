@@ -1,4 +1,6 @@
+[https://www.shiyanlou.com/questions/2986]
 
+##########################################################  
 Http和Socket连接区别
 
 ▶短连接 
@@ -29,6 +31,7 @@ HTTP也可以建立长连接的，使用Connection:keep-alive，HTTP 1.1默认�
 
 
 
+##########################################################
 
 HTTP协议即超文本传送协议(HypertextTransfer Protocol )，是Web联网的基础，也是手机联网常用的协议之一，HTTP协议是建立在TCP协议之上的一种应用。
 　　
@@ -43,4 +46,68 @@ HTTP连接最显著的特点是客户端发送的每次请求都需要服务器�
 通常的做法是即时不需要获得任何数据，客户端也保持每隔一段固定的时间向服务器发送一次“保持连接”的请求，服务器在收到该请求后对客户端进行回复，表明知道客 户端“在线”。若服务器长时间无法收到客户端的请求，则认为客户端“下线”，若客户端长时间无法收到服务器的回复，则认为网络已经断开。
 
 
+##########################################################
+URL(Uniform Resource Locator) 地址用于描述一个网络上的资源, 基本格式如下:
+schema://host[:port#]/path/.../[?query-string][#anchor]
 
+scheme               指定低层使用的协议(例如：http, https, ftp)
+
+host                   HTTP服务器的IP地址或者域名
+
+port#                 HTTP服务器的默认端口是80，这种情况下端口号可以省略。如果使用了别的端口，必须指明，例如 http://www.cnblogs.com:8080/
+
+path                   访问资源的路径
+
+query-string       发送给http服务器的数据
+
+anchor-             锚
+[URL 的一个例子]
+
+http://www.mywebsite.com/sj/test/test.aspx?name=sviergn&x=true#stuff
+
+Schema:                 http
+host:                   www.mywebsite.com
+path:                   /sj/test/test.aspx
+Query String:           name=sviergn&x=true
+Anchor:                 stuff
+
+先看Request 消息的结构, Request 消息分为3部分
+第一部分叫Request line,
+
+第二部分叫Request header,
+
+第三部分是body. header和body之间有个空行，
+
+当使用的是"GET" 方法的时候， body是为空的
+第一行中的Method表示请求方法,比如"POST","GET", Path-to-resoure表示请求的资源， Http/version-number 表示HTTP协议的版本号
+
+
+
+
+
+
+
+ Host（发送请求时，该报头域是必需的）
+ 
+ 作用: 请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的
+ 
+ 例如: 我们在浏览器中输入：http://www.guet.edu.cn/index.html
+ 
+ 浏览器发送的请求消息中，就会包含Host请求报头域，如下：
+ 
+ Host：http://www.guet.edu.cn
+ 此处使用缺省端口号80，若指定了端口号，则变成：Host：指定端口号
+ 
+ Cookie:
+ 
+ 作用： 最重要的header, 将cookie的值发送给HTTP 服务器
+ 
+ Cache-Control
+ 
+ 作用: 这个是非常重要的规则。 这个用来指定Response-Request遵循的缓存机制。各个指令含义如下:
+ Cache-Control:Public 可以被任何缓存所缓存（）
+ Cache-Control:Private 内容只缓存到私有缓存中
+ Cache-Control:no-cache 所有内容都不会被缓存
+ 
+Connection: keep-alive当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接
+  Connection: close 代表一个Request完成后，客户端和服务器之间用于传输HTTP数据的TCP连接会关闭， 当客户端再次发送Request，需要重新建立TCP连接。
