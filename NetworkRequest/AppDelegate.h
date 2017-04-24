@@ -63,7 +63,7 @@
  
  http://www.imooc.com/article/8493 webSocket
  
- https://github.com/ChenYilong/iOSBlog 陈一龙
+ https://github.com/ChenYilong/iOSBlog 陈宜龙
  
  */
 

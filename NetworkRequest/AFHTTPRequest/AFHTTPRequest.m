@@ -80,7 +80,7 @@ static AFHTTPSessionManager *sessionManager = nil;
      使用setValue:forHTTPHeaderField:方法填死数据就可以了,数据从哪来,问服务器
      使用setAuthorizationHeaderFieldWithUsername:password:方法填服务器特别要求的请求头密码与账户
      */
-    sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
     sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     //        session.requestSerializer=[AFPropertyListRequestSerializer serializerWithFormat:NSPropertyListXMLFormat_v1_0 writeOptions:512];
     //            [session.requestSerializer setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
@@ -127,7 +127,7 @@ static AFHTTPSessionManager *sessionManager = nil;
     //        session.responseSerializer=[AFImageResponseSerializer serializer];
     //        session.responseSerializer=[AFCompoundResponseSerializer serializer];
     ///看你服务器使用那种形式,就设置其中一种形式即可,下面的也可默认就行
-    sessionManager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"application/force-download", @"application/soap+xml; charset=utf-8",@"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/html; charset=iso-8859-1",@"text/plain",@"text/css",@"application/x-plist",@"image/*", nil];
+    sessionManager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"application/force-download", @"application/soap+xml; charset=utf-8",@"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/html; charset=iso-8859-1", @"text/html; charset=utf-8", @"text/plain",@"text/css",@"application/x-plist",@"image/*", nil];
     //        [session.responseSerializer validateResponse:<#(nullable NSHTTPURLResponse *)#> data:<#(nullable NSData *)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>];
     /*
      HTTPS的设置
